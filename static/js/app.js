@@ -76,8 +76,8 @@ function buildCharts(sample) {
         size: sample_values,
         color: otu_ids,
         colorscale: 'Viridis',
-        showscale: true
-    }
+        showscale: true},
+    hoverinfo: 'text: sample_values' // Place hoverinfo here, not in marker
   };
 
   var bubbleData = [trace];
@@ -109,7 +109,9 @@ function buildCharts(sample) {
       x: values,
       y: yTicks,
       type: 'bar',
-      orientation: 'h' // Horizontal bar chart
+      orientation: 'h', // Horizontal bar chart
+      text: otu_labels.slice(0, 10).reverse(), // Set otu_labels as the tooltip
+      hoverinfo: 'text' // Show only the text in the tooltip
     };
   
     const layoutBub = {
