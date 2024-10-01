@@ -1,5 +1,4 @@
 // Build the metadata panel
-//input only sample id number when running code?
 function buildMetadata(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
@@ -20,13 +19,6 @@ function buildMetadata(sample) {
 
     // Inside a loop, you will need to use d3 to append new
     // tags for each key-value in the filtered metadata.
-    
-    // MY ATTEMPT 1
-    // for (let i = 0; i < filterMetadata.length; i++) {
-    //   const row = myPanel[i]; //current row
-      // Mypanel.append("#new-tag").text(`${key}: ${value}`);
-
-    // RECCOMMENDED
     if (filterMetadata.length > 0) { // Check if there is any filtered metadata
       const row = filterMetadata[0]; // Get the first (and should be the only) object from the filtered metadata
       for (const [key, value] of Object.entries(row)) { // Use Object.entries to loop through key-value pairs
@@ -39,7 +31,6 @@ function buildMetadata(sample) {
 }
 
 // function to build both charts
-//input only sample id # to run correctly
 function buildCharts(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
@@ -97,11 +88,10 @@ function buildCharts(sample) {
 // Plotly Bar Chart
   // For the Bar Chart, map the otu_ids to a list of strings for your yticks
   // NOTE: original seems to already be in order of largest to smallest Svalues
-    // const yTicks = otu_ids.map(id => id.toString()).slice(0, 10); // Get first 10 yTicks
     const yTicks = otu_ids.slice(0, 10).reverse().map((id) => {
       return `OTU ID ${id}`; // Combine ID with corresponding label
     });
-    const values = sample_values.slice(0, 10).reverse(); // Get first 10 sample_values
+    const values = sample_values.slice(0, 10).reverse()
 
   // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
@@ -109,9 +99,9 @@ function buildCharts(sample) {
       x: values,
       y: yTicks,
       type: 'bar',
-      orientation: 'h', // Horizontal bar chart
-      text: otu_labels.slice(0, 10).reverse(), // Set otu_labels as the tooltip
-      hoverinfo: 'text, values' // Show only the text in the tooltip
+      orientation: 'h',
+      text: otu_labels.slice(0, 10).reverse(),
+      hoverinfo: 'text, values'
     };
   
     const layoutBub = {
