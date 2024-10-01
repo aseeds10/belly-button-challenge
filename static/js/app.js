@@ -111,7 +111,7 @@ function buildCharts(sample) {
       type: 'bar',
       orientation: 'h', // Horizontal bar chart
       text: otu_labels.slice(0, 10).reverse(), // Set otu_labels as the tooltip
-      hoverinfo: 'text' // Show only the text in the tooltip
+      hoverinfo: 'text, values' // Show only the text in the tooltip
     };
   
     const layoutBub = {
