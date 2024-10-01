@@ -97,8 +97,11 @@ function buildCharts(sample) {
 // Plotly Bar Chart
   // For the Bar Chart, map the otu_ids to a list of strings for your yticks
   // NOTE: original seems to already be in order of largest to smallest Svalues
-    const yTicks = otu_ids.map(id => id.toString()).slice(0, 10); // Get first 10 yTicks
-    const values = sample_values.slice(0, 10); // Get first 10 sample_values
+    // const yTicks = otu_ids.map(id => id.toString()).slice(0, 10); // Get first 10 yTicks
+    const yTicks = otu_ids.slice(0, 10).reverse().map((id) => {
+      return `OTU ID ${id}`; // Combine ID with corresponding label
+    });
+    const values = sample_values.slice(0, 10).reverse(); // Get first 10 sample_values
 
   // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
@@ -112,11 +115,10 @@ function buildCharts(sample) {
     const layoutBub = {
       title: 'Top 10 Bacteria Cultures Found',
       xaxis: { title: 'Number of Bacteria' },
-      yaxis: { title: 'OTU ID' }
       };
 
     // Render the Bar Chart
-    Plotly.newPlot('bar-chart', [traceBub], layoutBub);
+    Plotly.newPlot('bar', [traceBub], layoutBub);
 
   });
 }
