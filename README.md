@@ -1,5 +1,5 @@
-# Project Title
-Rutgers Bootcamp Challenge 14 - JavaScript Dashboard & Belly Button Biodiversity
+# Belly Button Biodiversity Dashboard
+Challenge 14 - JavaScript Dashboard & Belly Button Biodiversity
 
 ## Description
 Prompt: Build an interactive dashboard to explore the Belly Button Biodiversity dataset(http://robdunnlab.com/projects/belly-button-biodiversity/), 
