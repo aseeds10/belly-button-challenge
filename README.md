@@ -47,7 +47,14 @@ Detailed Information: Displays metadata about the selected test subject, includi
 
 ### Bubble Sort
 This code snippet creates a dynamic bubble chart to visualize the most abundant microbes in the dataset.
-```javascript Plotly.newPlot('bubble', [{ x: otu_ids, y: sample_values, text: otu_labels, mode: 'markers', marker: { size: sample_values, color: otu_ids, colorscale: 'YlGnBu' } }], layout);
+```javascript Plotly
+Plotly.newPlot('bubble', [{
+   x: otu_ids,
+   y: sample_values,
+   text: otu_labels,
+   mode: 'markers',
+   marker: { size: sample_values, color: otu_ids, colorscale: 'YlGnBu' }
+}], layout);
 ```
 
 
