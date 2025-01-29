@@ -33,10 +33,10 @@ The application provides an interactive view of the dataset, offering insights i
    git clone https://github.com/aseeds10/belly-button-challenge.git
 
 Install Plotly and D3.js libraries by adding the following scripts in your HTML file:
-html
-Copy
+```HTML.
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
+```
 
 ## Features
 Interactive Bubble Chart: Displays the most abundant microbes found in human belly buttons.
